@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
     return (
@@ -69,4 +69,4 @@ export default function AboutSection() {
       </section>
     );
   }
-  
+

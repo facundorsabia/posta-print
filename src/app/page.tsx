@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import AboutSection from "@/components/ui/aboutSection";
+import { Button } from "@/components/ui/Button";
+import AboutSection from "@/components/sections/AboutSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export default function Home() {
   return (
@@ -20,25 +21,11 @@ export default function Home() {
 
       <AboutSection />
 
-      {/* Servicios */}
-      <section className="w-full max-w-6xl py-20 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          { title: "Figurines y Modelos", desc: "Desde personajes hasta prototipos personalizados." },
-          { title: "Soportes y Piezas", desc: "Soluciones prácticas, resistentes y a medida." },
-          { title: "Accesorios Únicos", desc: "Llaveros, gadgets y objetos decorativos impresos en 3D." },
-        ].map((item, i) => (
-          <Card key={i}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-black">{item.title}</h3>
-              <p className="text-black text-sm">{item.desc}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+      <ServicesSection />
 
       {/* Galería */}
       <section className="w-full max-w-6xl py-20 px-4">
-        <h2 className="text-3xl font-semibold mb-8 text-center text-black">Nuestros Trabajos</h2>
+        <SectionTitle className="mb-8 text-center">Nuestros Trabajos</SectionTitle>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
             <div key={n} className="relative aspect-square bg-neutral-200 rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
@@ -55,7 +42,7 @@ export default function Home() {
 
       {/* Contacto */}
       <section className="w-full max-w-4xl py-20 px-4 text-center">
-        <h2 className="text-3xl font-semibold mb-6 text-black">Contactanos</h2>
+        <SectionTitle className="mb-6">Contactanos</SectionTitle>
         <p className="text-black mb-4">Contanos qué querés imprimir o pedinos presupuesto personalizado.</p>
         <Button size="lg">
           Escribinos
