@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
     return (
-      <section className="w-full bg-white text-black py-20 px-6 overflow-hidden">
+      <section className="w-full text-black py-20 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
   
           {/* Columna izquierda */}
@@ -13,6 +13,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
+            className="bg-white rounded-2xl p-8 border border-black transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(0,0,0,1)]"
           >
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Cómo{" "}
@@ -57,6 +58,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 border border-black transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(0,0,0,1)]"
               >
                 <h3 className="inline-block text-xl md:text-3xl font-bold mb-3 bg-[#abf600] text-black px-3 py-1 rounded-md">
                   {item.title}

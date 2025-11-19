@@ -3,25 +3,59 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import FiguresCarouselSection from "@/components/sections/FiguresCarouselSection";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import GlitchText from "@/components/ui/GlitchText";
+import Cubes from "@/components/ui/Cubes";
+import Squares from "@/components/ui/Squares";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full min-h-screen bg-white text-black">
-      {/* Hero Section */}
-      <section className="w-full text-center py-24 px-4 bg-white">
-        <h1 className="text-5xl font-bold mb-4 text-black">Posta-Print</h1>
-        <p className="text-lg text-black max-w-xl mx-auto mb-6">
-          Impresiones 3D posta. Figurines, soportes, accesorios y más — diseñamos y materializamos tus ideas.
-        </p>
-        <Button size="lg">
-          Pedí tu impresión
-        </Button>
+    <>
+      {/*Background*/}
+      <Squares 
+        speed={0.2} 
+        squareSize={200}
+        direction='diagonal' // up, down, left, right, diagonal
+        borderColor='#89c500'
+        hoverFillColor='#222'
+      />
+      <main className="relative flex flex-col items-center w-full min-h-screen text-black overflow-x-hidden z-10">
+        {/* Hero Section */}
+      <section className="w-full text-center pt-24 px-4">
+        <GlitchText
+          speed={1}
+          enableShadows={true}
+          enableOnHover={false}
+          className="text-6xl md:text-7xl font-bold mb-4 text-black"
+        >
+          POSTA-PRINT
+        </GlitchText>
+        <h2 className="text-3xl text-black max-w-xl mx-auto mt-6">
+          Impresiones 3D posta.
+        </h2>
       </section>
+      <div className="w-full mt-5">
+          <Cubes 
+            rows={2}
+            cols={100}
+            cubeSize={30}
+            maxAngle={180}
+            radius={4}
+            faceColor="#000000"
+            borderStyle="1px solid #abf600"
+            autoAnimate={true}
+            rippleOnClick={true}
+            rippleColor="#ffffff"
+            cellGap={10}
+          />
+      </div>
 
       <AboutSection />
 
       <ServicesSection />
+
+      <FiguresCarouselSection />
 
       {/* Galería */}
       <section className="w-full max-w-6xl py-20 px-4">
@@ -53,7 +87,8 @@ export default function Home() {
       <footer className="w-full py-6 text-center text-sm text-black border-t border-neutral-300">
         © {new Date().getFullYear()} PostaPrint — Hecho con ❤️ en Argentina
       </footer>
-    </main>
+      </main>
+    </>
   );
 }
 
