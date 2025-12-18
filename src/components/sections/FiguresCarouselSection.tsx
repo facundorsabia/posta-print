@@ -6,14 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function FiguresCarouselSection() {
   const images = [
-    "/images/figura1.webp",
-    "/images/figura2.webp",
-    "/images/figura3.webp",
-    "/images/figura4.webp",
-    "/images/figura5.webp",
-    "/images/figura6.webp",
-    "/images/figura7.webp",
-    "/images/figura8.webp",
+    "/images/figura1.jpg",
+    "/images/figura2.jpg",
+    "/images/figura3.jpg",
+    "/images/figura4.jpg",
+    "/images/figura5.jpg",
+    "/images/figura6.jpg",
+    "/images/figura7.jpg",
+    "/images/figura8.jpg",
+    "/images/figura9.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,18 +50,17 @@ export default function FiguresCarouselSection() {
               />
             </motion.div>
           </AnimatePresence>
-          
+
           {/* Indicadores */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "w-8 bg-[#abf600]"
-                    : "w-2 bg-white/50 hover:bg-white/75"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                  ? "w-8 bg-[#abf600]"
+                  : "w-2 bg-white/50 hover:bg-white/75"
+                  }`}
                 aria-label={`Ir a imagen ${index + 1}`}
               />
             ))}
@@ -68,12 +68,12 @@ export default function FiguresCarouselSection() {
         </div>
 
         {/* Texto - Lado derecho */}
-        <div className="flex flex-col justify-center space-y-6 bg-white rounded-2xl p-8 border border-black transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(0,0,0,1)]">
+        <div className="flex flex-col justify-center space-y-6 bg-white/70 rounded-2xl p-8 border border-black transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(0,0,0,1)]">
           <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
             Colección artesanal 3D
           </h2>
           <p className="text-lg leading-relaxed text-black">
-          Nuestros modelos 3D terminados combinan la precisión de la impresión con el arte de la pintura artesanal. Cada figura es cuidadosamente impresa, lijada y pintada a mano con acrílicos de alta calidad, logrando acabados únicos que resaltan cada detalle. El resultado son piezas exclusivas listas para exhibir, coleccionar o regalar, creadas con dedicación y pasión por el modelismo.
+            Nuestros modelos 3D terminados combinan la precisión de la impresión con el arte de la pintura artesanal. Cada figura es cuidadosamente impresa, lijada y pintada a mano con acrílicos de alta calidad, logrando acabados únicos que resaltan cada detalle. El resultado son piezas exclusivas listas para exhibir, coleccionar o regalar, creadas con dedicación y pasión por el modelismo.
           </p>
         </div>
       </div>

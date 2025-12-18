@@ -11,7 +11,7 @@ const SectionTitle = React.forwardRef<HTMLHeadingElement, SectionTitleProps>(
       <Component
         ref={ref}
         className={cn(
-          "text-3xl font-semibold text-black",
+          "text-5xl font-semibold text-black",
           className
         )}
         {...props}
